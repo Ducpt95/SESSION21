@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+
+        }
+        .detail-image
+        {
+            display: flex;
+            justify-content: center;
+        }
+        .detail-image img {
+            width: 700px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="detail-image">
+            <img id="image" src="/img/1.jpg" alt="">
+        </div>
+    </div>
+    <script>
+       let arrayImages = ["/img/1.jpg","/img/2.jpg","/img/3.jpg"]
+       let count = 0;
+       function displayImages() {
+        let image = document.getElementById('image');
+        image.src = arrayImages[count]
+        ++count
+        if(count==3){
+            count=0
+        }
+       }
+       setInterval(displayImages,2000)
+    </script>
+</body>
+</html>
